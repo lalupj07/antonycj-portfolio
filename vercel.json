@@ -1,0 +1,9 @@
+{
+  "name": "antonycj-portfolio",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
