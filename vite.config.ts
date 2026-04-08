@@ -4,13 +4,12 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Strip console.* and debugger statements in production via esbuild (bundled with Vite)
+  // Strip console.* and debugger statements in production via esbuild
   esbuild: {
-    // @ts-expect-error — drop is a valid esbuild option, TS types may lag behind
-    drop: ['console', 'debugger'] as unknown as [],
+    drop: ['console', 'debugger'],
   },
   build: {
-    minify: 'esbuild', // esbuild is bundled with Vite — no extra install needed
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks(id) {
